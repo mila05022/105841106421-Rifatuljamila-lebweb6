@@ -1,89 +1,39 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import React from 'react';
-import ButtonComponent from './Component/button/button';
+import { Text, View, Image, TextInput } from 'react-native'
+import React  from 'react'
 
 const App = () => {
+   const Inputan = ({ nama, color})=>{
+    return(
+     <TextInput
+     placeholder={`Masukkan ${nama}`}
+     style={{
+       borderWidth: 1,
+       borderColor: 'black',
+       borderRadius: 10,
+       width: 300,
+       height: 50,
+       marginVertical: 10,
+       padding: 10,
+       backgroundColor: '#ADD8E6',
+       color:color,
+     }}
+     />
+   )
+  }
+
   return (
-     <View style={{
+    <View style={{
       flex: 1,
-      backgroundColor: '#000',
-     }}>
-     <Image
-      source={ require('./assets/latar.jpeg')}
-      style={{
-        width: '100%',
-        height: '100%',
-        position: 'absolute',
-        opacity: 0.5,
-        zIndex: -1,
-      }}
-      resizeMode="cover"
-      />
-      <ScrollView contentContainerStyle={{
-        flexGrow: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-      }}>
-      
-      <Image source={ require('./assets/video.png')}
-      style={{
-        width: 100,
-        height: 100,
-        marginTop:50,
-        marginRight: 10,
-        opacity: 1,
-        zIndex: 1,
-        borderRadius: 10,
-      }}
-      />
-      <Text style={{
-       color: 'white',
-        fontSize: 28,
-        fontWeight: '300',
-        textAlign: 'center',
-        marginTop: 40,
-        fontWeight: 'bold',
-      }}>
-        Selamat Datang di Aplikasi Video
-      </Text>
-        <Text style={{
-          color: 'white',
-          fontSize: 20,
-          textAlign: 'center',
-          marginTop: 10,
-        }}>
-          Aplikasi yang memungkinkan anda menonton dan mengunggah video berkualitas tinggi
-      </Text>
-            <Text style={{
-              color: 'white',
-              fontSize: 20,
-              textAlign: 'center',
-              marginTop: 10,
-            }}>
-              Jelajahi berbagai konten menarik dari berbagai gendre
-            </Text>
-            <Text style={{
-              color: 'white',
-              fontSize: 20,
-              textAlign: 'center',
-              marginTop: 10,
-              marginBottom: 10,
-            }}>
-            Bergabunglah sekarang dan nikmati pengalaman menonton yang belum pernah anda rasakan sebelumnya.
-            </Text>
-        <View style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginBottom: 50,
-        }}>
-              <ButtonComponent title= "Sign in" color="blue" />
-              <ButtonComponent title= "Sign up" color="red" />
-        </View>
-      </ScrollView>
-    </View>
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+    
+     <Inputan nama= "Email" color = "white"/>
+     <Inputan nama= "Username" color = "white"/>
+     <Inputan nama= "Password" color = "whit"/>
+      </View>
   )
+  
 }
 
 export default App;
